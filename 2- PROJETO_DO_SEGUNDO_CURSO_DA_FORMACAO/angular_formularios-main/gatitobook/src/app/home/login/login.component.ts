@@ -21,11 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.service.autenticar(this.user, this.senha).subscribe((res) => {
+    this.service.autenticar(this.user, this.senha).subscribe(() => {
       this.router.navigate(['gatos'])
     }, (error)=>{
       alert('Usuário ou senha inválido');
-      console.log(JSON.stringify(error));
+      console.log(error);
     }
     );
   }
