@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -43,7 +45,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gatitobook"
+    }
+  },
+  "defaultProject": "gatitobook",
+  "cli": {
+    "analytics": "387841ff-5b15-417d-b863-73f88a70256a"
+  }
 }
