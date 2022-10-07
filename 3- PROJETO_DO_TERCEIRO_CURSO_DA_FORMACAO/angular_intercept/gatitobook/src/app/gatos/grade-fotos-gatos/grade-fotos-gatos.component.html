@@ -2,11 +2,12 @@
 
 <div class="row">
   <div *ngFor="let gato of gatos" class="col-3">
-    <a [routerLink]="['/gatos', gato.id]"></a>
-    <app-cartao>
-      <app-gato [url]="gato.url" [descricao]="gato.description"></app-gato>
-      <i aria-hidden="true" class="fa fa-heart-o fa-1x ms-2">{{gato.likes}}</i>
-      <i aria-hidden="true" class="fa fa-comment-o fa-1x ms-2">{{gato.comments}}</i>
-    </app-cartao>
+    <a [routerLink]="['/gatos', gato.id]">
+      <app-cartao>
+        <app-gato [url]="gato.url" [descricao]="gato.description"></app-gato>
+        <i aria-hidden="true" class="fa fa-heart-o fa-1x ms-2">{{gato.likes}}</i>
+        <i aria-hidden="true" class="fa fa-comment-o fa-1x ms-2">{{gato.comments}}</i>
+      </app-cartao>
+    </a>
   </div>
 </div>

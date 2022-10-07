@@ -6,10 +6,11 @@ import { GatosRoutingModule } from './gatos-routing.module';
 import { ListaGatosComponent } from './lista-gatos/lista-gatos.component';
 import { GatoComponent } from './gato/gato.component';
 import { GradeFotosGatosComponent } from './grade-fotos-gatos/grade-fotos-gatos.component';
+import { DetalheGatoComponent } from './detalhe-gato/detalhe-gato.component';
 
 
 @NgModule({
-  declarations: [ListaGatosComponent, GatoComponent, GradeFotosGatosComponent],
+  declarations: [ListaGatosComponent, GatoComponent, GradeFotosGatosComponent, DetalheGatoComponent],
   imports: [
     CommonModule,
     GatosRoutingModule,

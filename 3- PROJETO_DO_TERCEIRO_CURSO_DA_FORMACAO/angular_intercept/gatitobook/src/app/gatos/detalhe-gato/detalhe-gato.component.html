@@ -1,0 +1,15 @@
+<div class="bg-white border" *ngIf="gato$ | async as gato">
+  <div class="row">
+    <div class="col-lg-8">
+      <app-gato [url]="gato.url" [descricao]="gato.description"></app-gato>
+    </div>
+    <div class="col-lg-4">
+      <small>
+        <p class="text-left break-word">{{ gato.description }}</p>
+        <i (click)="curtir()" class="fa fa-heart-o fa-2x ms-2 pull-left">{{gato.likes}}</i>
+        <i class="fa fa-comment-o fa-2x ms-2">{{gato.comments}}</i>
+        <i (click)="excluir()" class="fa fa-trash-o fa-2x pull-right"></i>
+      </small>
+    </div>
+  </div>
+</div>
