@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DetalheGatoComponent } from './detalhe-gato/detalhe-gato.component';
 import { ListaGatosResolver } from './lista-gatos/lista-gatos.resolver';
+import { NovoGatoComponent } from './novo-gato/novo-gato.component';
 
 const routes: Routes = [
   {
@@ -13,9 +14,12 @@ const routes: Routes = [
     }
   },
   {
+    path:'novo',
+    component: NovoGatoComponent
+  },
+  {
     path: ':gatoId',
     component: DetalheGatoComponent,
-
   },
 ];
 

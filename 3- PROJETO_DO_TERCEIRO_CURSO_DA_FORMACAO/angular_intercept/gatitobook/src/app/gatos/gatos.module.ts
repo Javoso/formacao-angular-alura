@@ -11,10 +11,11 @@ import { GradeFotosGatosComponent } from './grade-fotos-gatos/grade-fotos-gatos.
 import { DetalheGatoComponent } from './detalhe-gato/detalhe-gato.component';
 import { ComentariosComponent } from './detalhe-gato/comentarios/comentarios.component';
 import { SharedModule } from '../shared/shared.module';
+import { NovoGatoComponent } from './novo-gato/novo-gato.component';
 
 
 @NgModule({
-  declarations: [ListaGatosComponent, GatoComponent, GradeFotosGatosComponent, DetalheGatoComponent, ComentariosComponent],
+  declarations: [ListaGatosComponent, GatoComponent, GradeFotosGatosComponent, DetalheGatoComponent, ComentariosComponent, NovoGatoComponent],
   imports: [
     CommonModule,
     GatosRoutingModule,

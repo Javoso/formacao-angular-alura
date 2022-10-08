@@ -38,4 +38,16 @@ export class GatosService {
         })
       );
   }
+
+  upload(descricao: string, permitirComentario: boolean, arquivo: File) {
+    const formData = new FormData();
+    formData.append('description',descricao);
+    formData.append('allowComments', permitirComentario ? 'true' : 'false');
+    formData.append('imageFile', arquivo);
+
+    return this.http.post(`${environment.apiUrl}/photos/upload`, formData, {
+      observe: 'events',
+      reportProgress: true
+    });
+  }
 }
