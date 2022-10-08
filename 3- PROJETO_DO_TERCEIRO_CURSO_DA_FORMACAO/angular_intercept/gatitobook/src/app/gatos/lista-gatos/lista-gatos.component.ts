@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Gatos } from '../gatos';
-import { UsuarioService } from '../../autenticacao/usuario/usuario.service';
-import { GatosService } from '../gatos.service';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lista-gatos',
@@ -11,19 +8,15 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./lista-gatos.component.css'],
 })
 export class ListaGatosComponent implements OnInit {
-  gatos$!: Observable<Gatos>;
+  gatos!: Gatos;
 
   constructor(
-    private usuarioService: UsuarioService,
-    private gatosService: GatosService
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
-    this.gatos$ = this.usuarioService.retornaUsuario().pipe(
-      switchMap((user) => {
-        const userName = user.name ?? '';
-        return this.gatosService.listaDoUsuario(userName);
-      })
-    );
+    this.activatedRoute.params.subscribe((param)=>{
+      this.gatos = this.activatedRoute.snapshot.data['gatos'];
+    })
   }
 }
