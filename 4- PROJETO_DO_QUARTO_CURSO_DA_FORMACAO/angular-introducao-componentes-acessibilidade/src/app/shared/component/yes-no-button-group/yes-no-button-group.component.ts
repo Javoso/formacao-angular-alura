@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, forwardRef,} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { UniqueIdService } from './services/unique-id/unique-id-service';
+
 /**
  *
  *
@@ -27,10 +29,13 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   public options = YesNoButtonGroupOptions;
   public onChange = (value: string)=>{}
   public onTouched = ()=>{}
+  public id: string = null;
 
   ngOnInit(): void {}
 
-  constructor() {}
+  constructor(private uniqueId: UniqueIdService) {
+    this.id = uniqueId.gerarIdComPrefixo('yes-no-button-group');
+  }
 
   public activate(value: string): void {
     this.writeValue(value);
