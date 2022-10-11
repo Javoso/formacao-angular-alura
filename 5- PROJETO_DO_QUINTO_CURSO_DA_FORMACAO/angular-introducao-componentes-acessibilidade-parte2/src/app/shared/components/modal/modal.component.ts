@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { ModalConfig } from './services/interface/modal-config';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
+  public modalConfig: ModalConfig;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

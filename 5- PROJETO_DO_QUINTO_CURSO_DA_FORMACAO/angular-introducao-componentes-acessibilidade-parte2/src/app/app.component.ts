@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef } from '@angular/core';
-import { ModalService, ModalRef } from './shared/components/services/modal.service';
+import { ModalService, ModalRef } from './shared/components/modal/services/modal.service';
 
 @Component({
   selector: 'app-root',
