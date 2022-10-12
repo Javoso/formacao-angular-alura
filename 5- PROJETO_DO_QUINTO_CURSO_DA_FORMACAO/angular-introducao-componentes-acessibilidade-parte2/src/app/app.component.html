@@ -5,6 +5,7 @@
 <button (click)="show()" class="button button-primary" type="button">Show modal</button>
 
 <ng-template #modal>
+
   <div class="form-field">
     <label for="firstname"> First name</label>
     <input id="firstname" [(value)]="firstName">
@@ -17,6 +18,11 @@
     <label for="age"> Age</label>
     <input id="age" type="number" [(value)]="age">
   </div>
+
+  <label for="info">Subscribe to news letters</label>
+  <input type="checkbox" id="info" (change)="info = !info">
+  <p *ngIf="info">This is a placeholder for more information</p>
+
   <div class="button-group">
     <button class="button button-primary" type="button">Submit</button>
     <button class="button button-secondary" type="button" (click)="modalRef.close()" >Cancel</button>
