@@ -5,27 +5,36 @@
 <button (click)="show()" class="button button-primary" type="button">Show modal</button>
 
 <ng-template #modal>
+  <form [formGroup]="form" (ngSubmit)="submit()" >
 
-  <div class="form-field">
-    <label for="firstname"> First name</label>
-    <input id="firstname" [(value)]="firstName">
-  </div>
-  <div class="form-field">
-    <label for="surname"> Surname</label>
-    <input id="surname" [(value)]="surName">
-  </div>
-  <div class="form-field">
-    <label for="age"> Age</label>
-    <input id="age" type="number" [(value)]="age">
-  </div>
+    <div class="form-field">
+      <label for="firstname"> First name</label>
+      <input id="firstname" 
+      aria-describedby="alert-error-firstname"
+      [attr.aria-invalid]="form.get('firstName').invalid"
+      formControlName="firstName">
+      <span id="alert-error-firstname"  class="validation-error" *ngIf="form.get('firstName')?.errors?.required"
+      >First name is required</span>
+    </div>
+    <div class="form-field">
+      <label for="surname"> Surname</label>
+      <input aria-describedby="alert-error-surname" [attr.aria-invalid]="form.get('surName').invalid" id="surname" formControlName="surName">
+      <span id="alert-error-surname" class="validation-error" *ngIf="form.get('surName')?.errors?.required">
+        Surname is required</span>
+    </div>
+    <div class="form-field">
+      <label for="age"> Age</label>
+      <input id="age" aria-describedby="alert-error-age" type="number" formControlName="age" [attr.aria-invalid]="form.get('age').invalid" >
+      <span id="alert-error-age"  class="validation-error" *ngIf="form.get('age')?.errors?.required">Age is required</span>
+    </div>
 
-  <label for="info">Subscribe to news letters</label>
-  <input type="checkbox" id="info" (change)="info = !info">
-  <p *ngIf="info">This is a placeholder for more information</p>
+    <label for="info">Subscribe to news letters</label>
+    <input formControlName="info" type="checkbox" id="info" (change)="info = !info">
+    <p *ngIf="info">This is a placeholder for more information</p>
 
-  <div class="button-group">
-    <button class="button button-primary" type="button">Submit</button>
-    <button class="button button-secondary" type="button" (click)="modalRef.close()" >Cancel</button>
-  </div>
+    <div class="button-group">
+      <button class="button button-primary" type="submit" [attr.aria-disabled]="form.invalid">Submit</button>
+      <button class="button button-secondary" type="button" (click)="modalRef.close()">Cancel</button>
+    </div>
+  </form>
 </ng-template>
-

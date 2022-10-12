@@ -1,5 +1,5 @@
 <div class="modal-overlay" (click)="modalRef.close()" (keydown.esc)="modalRef.close()">
-  <div appFocusTrap appFocusBack class="modal-content" (click)="$event.stopPropagation()">
+  <div appFocusTrap appFocusBack role="dialog" aria-modal="true" [attr.aria-label]="modalConfig.title" class="modal-content" (click)="$event.stopPropagation()">
     <h1 class="modal-title">
       {{modalConfig.title}}
     </h1>
