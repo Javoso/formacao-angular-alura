@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  public title:string ="AluraPic";
-  public srcImage:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYa8x7s071YT7HUCgpnOxOmksZClmg9p3ypA&usqp=CAU';
-  public altImage:string = 'Pinguin';
+  photos = [
+    { 
+      srcImage: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Angular-logo.png', 
+      altImage: 'Angular'
+    },
+    { 
+      srcImage: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Angular-logo.png', 
+      altImage: 'Angular'
+    },
+    { 
+      srcImage: 'https://cdn.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular-1520x800.png', 
+      altImage: 'Angular'
+    }         
+  ];  
 }
+
+

@@ -1,3 +1,5 @@
-<h1>{{title}}</h1>
-<img [src]="srcImage" [alt]="altImage">
-
+<ap-photo 
+    *ngFor="let photo of photos" 
+    [srcImage]="photo.srcImage" 
+    [altImage]="photo.altImage">
+</ap-photo>
